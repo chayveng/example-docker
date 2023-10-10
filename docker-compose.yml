@@ -1,0 +1,127 @@
+# version: "3.8"
+
+# services:
+#   postgres:
+#     image: postgres:latest
+#     container_name: postgres_container
+#     environment:
+#       POSTGRES_DB: example
+#       POSTGRES_USER: postgres
+#       POSTGRES_PASSWORD: bfr333f83e59
+#     ports:
+#       - "5432:5432"
+#     networks:
+#       - postgres_network
+
+#   pgadmin:
+#     image: dpage/pgadmin4:latest
+#     container_name: pgadmin_container
+#     environment:
+#       PGADMIN_DEFAULT_EMAIL: admin@example.com
+#       PGADMIN_DEFAULT_PASSWORD: t3kq379k547r
+#     ports:
+#       - "5050:80"
+#     depends_on:
+#       - postgres
+#     networks:
+#       - postgres_network
+
+#   react-app:
+#     image: node:14 # Node.js image
+#     container_name: react-app-container
+#     working_dir: /app
+#     volumes:
+#       - ./my-react-app:/app # Replace 'my-react-app' with your actual React app directory
+#     ports:
+#       - "3000:3000" # Port for the React app
+#     command: sh -c "npm install && npm start"
+
+# networks:
+#   postgres_network:
+#     driver: bridge
+
+########################################################################################################################################################################################################
+
+# version: '3.8'
+
+# version: '3.8'
+
+# version: '3.8'
+
+# services:
+#   react-app:
+#     image: node:14
+#     container_name: react-app-container
+#     working_dir: /app
+#     volumes:
+#       - ./react-app:/app
+#     ports:
+#       - "3000:3000"
+#     command: sh -c "npm install && npm start"
+
+#   nestjs-api:
+#     image: node:14
+#     container_name: nestjs-api-container
+#     working_dir: /app
+#     volumes:
+#       - ./nestjs-api:/app
+#     ports:
+#       - "4000:4000"
+#     command: sh -c "npm install && npm run start:dev"
+
+#   angularjs:
+#     image: nginx:latest
+#     container_name: angularjs-container
+#     volumes:
+#       - ./angularjs:/usr/share/nginx/html
+#     ports:
+#       - "4200:80"
+
+#   postgres-db:
+#     image: postgres:latest
+#     container_name: postgres-container
+#     environment:
+#       POSTGRES_DB: example
+#       POSTGRES_USER:  postgres
+#       POSTGRES_PASSWORD: 12345678
+#     ports:
+#       - "5432:5432"
+#     networks:
+#       - postgres_network
+
+#   pgadmin:
+#     image: dpage/pgadmin4:latest
+#     container_name: pgadmin-container
+#     environment:
+#       PGADMIN_DEFAULT_EMAIL: admin@example.com
+#       PGADMIN_DEFAULT_PASSWORD: 12345678
+#     ports:
+#       - "5050:80"
+#     depends_on:
+#       - postgres-db
+#     networks:
+#       - postgres_network
+
+# networks:
+#   default:
+#     driver: bridge
+#   postgres_network:
+#     driver: bridge
+
+version: '3.8'
+
+services:
+  nestjs-api:
+    image: node:14
+    container_name: nestjs-api-container
+    working_dir: /app
+    volumes:
+      - ./nestjs-api:/app
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run start:dev"
+    # command: sh -c "npm run start:dev"
+
+networks:
+  default:
+    driver: bridge

@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: node:18  # Use the official Node.js image
+    working_dir: /app      # Set the working directory in the container
+    volumes:
+      - C:\Users\Chayv\WorkSpace\Docker\example\reactjs:/app  # Mount the local app directory into the container
+    ports:
+      - "4000:3000"  # Map port 3000 in the container to port 4000 on your host
+    command: ["npm", "start"]  # Command to start the React app
